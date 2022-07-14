@@ -1,0 +1,616 @@
+<!doctype html>
+<!--
+Created using JS Bin
+http://bin.webduino.io
+
+Copyright (c) 2022 by anonymous (http://bin.webduino.io/xofev/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>🈲️茄苳腳暗部_根🈲️</title>
+  <script src="https://blocklypro.webduino.io/node_modules/jquery/dist/jquery.min.js?rev=2f6b11a7e914718e0290410e85366fe9"></script>
+  <script src="https://blocklypro.webduino.io/dist/lib/webduino-all-0.4.20.min.js?rev=4426739c00d85325cb2d3d701fa50666"></script>
+  <script src="https://blocklypro.webduino.io/dist/webduino-blockly.min.js?rev=6e074ceb23d12d1f7cf2ec95cd5a4150"></script>
+  <script src="https://blocklypro.webduino.io/dist/lib/firebase.min.js?rev=c0bfd493efd477d098a4ae9e92b13880"></script>
+  <script src="https://blocklypro.webduino.io/dist/lib/runtime.min.js?rev=683a69503433786202911b4d9f766100"></script>
+  <script src="https://buberhu.github.io/webduino_LINE_V3/main.js"></script>
+<style id="jsbin-css">
+html,body{
+  font-family:'Verdana';
+  background:#333;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#demo-area-09-controller{
+  position:relative;
+  box-sizing:border-box;
+  width:100%;
+  max-width:550px;
+  padding:20px 10px;
+  margin:0 auto;
+  overflow: hidden;
+  pointer-events: auto!important;
+}
+.demo-area-09-btn{
+  position:relative;
+  display:inline-block;
+  width:calc(33% - 8px);
+  height:60px;
+  background:#555;
+  margin:3px 1px;
+  text-align:center;
+  line-height:60px;
+  border-radius:5px;
+  color:#fff;
+  font-size:22px;
+  vertical-align: middle;
+  cursor:pointer;
+}
+.demo-area-09-btn:active{
+  background:#777;
+}
+@media (max-width:480px){
+  .demo-area-09-btn{
+    height:50px;
+    line-height:50px;
+    font-size:20px;
+  }
+}
+@media (max-width:400px){
+  .demo-area-09-btn{
+    height:45px;
+    line-height:45px;
+    font-size:18px;
+  }
+}
+.demo-area-09-btn.btn-power{
+  background:#d00;
+  height:60px;
+  width:60px;
+  border-radius:50%;
+  margin-bottom:10px;
+}
+.demo-area-09-btn.btn-power:active{
+  background:#f22;
+}
+.demo-area-09-btn.btn-show{
+  background:#357;
+  width:calc(100% - 80px);
+  margin-left:5px;
+  color:#acf;
+  margin-bottom:10px;
+  cursor:default;
+}
+@media (max-width:480px){
+  .demo-area-09-btn.btn-power{
+    height:50px;
+    width:50px;
+  }
+  .demo-area-09-btn.btn-show{
+    width:calc(100% - 70px);
+    margin-left:5px;
+    overflow:hidden;
+  }
+}
+@media (max-width:400px){
+  .demo-area-09-btn.btn-power{
+    height:45px;
+    width:45px;
+  }
+  .demo-area-09-btn.btn-show{
+    width:calc(100% - 60px);
+    margin-left:3px;
+  }
+}
+.demo-area-09-btn-group{
+  width:100%;
+  text-align:center;
+}
+.demo-area-09-btn.btn-range{
+  position:relative;
+  width:calc(100% - 20px);
+  height:20px;
+  display:block;
+  margin:25px auto;
+  background:#222;
+  cursor:default;
+}
+.demo-area-09-btn.btn-range-bar{
+  position:absolute;
+  width:32px;
+  height:50px;
+  top:-20px;
+  left:0;
+  background:#555;
+  line-height:50px;
+}
+.demo-area-09-btn.btn-range-bar:active{
+  background:#777;
+}
+.demo-area-09-btn-group.btn-direction-group{
+  margin-bottom:10px;
+}
+.demo-area-09-btn-group.btn-direction-group .demo-area-09-btn{
+  height:80px;
+  line-height:80px;
+}
+.demo-area-09-btn-group.btn-player-group{
+  margin-bottom:5px;
+}
+
+@media (max-width:480px){
+  .demo-area-09-btn-group.btn-direction-group .demo-area-09-btn{
+    height:70px;
+    line-height:70px;
+  }
+}
+@media (max-width:400px){
+  .demo-area-09-btn-group.btn-direction-group .demo-area-09-btn{
+    height:60px;
+    line-height:60px;
+  }
+}
+.demo-area-09-btn-group.btn-player-group .demo-area-09-btn{
+  width:calc(20% - 10px);
+  margin:5px 2px;
+}
+.demo-area-09-btn-group.btn-player-group .btn-pre{
+  font-size:14px;
+}
+.demo-area-09-btn-group.btn-player-group .btn-next{
+  font-size:14px;
+}
+
+.demo-area-09-btn-group.btn-menu-group .demo-area-09-btn{
+  width:calc(25% - 10px);
+  margin:5px 2px;
+}
+.demo-area-09-btn-group.btn-menu-group .btn-color1{
+  background:#d00;
+}
+.demo-area-09-btn-group.btn-menu-group .btn-color1:active{
+  background:#f22;
+}
+.demo-area-09-btn-group.btn-menu-group .btn-color2{
+  background:#0a0;
+}
+.demo-area-09-btn-group.btn-menu-group .btn-color2:active{
+  background:#2d2;
+}
+.demo-area-09-btn-group.btn-menu-group .btn-color3{
+  background:#09c;
+}
+.demo-area-09-btn-group.btn-menu-group .btn-color3:active{
+  background:#3bf;
+}
+.demo-area-09-btn-group.btn-menu-group .btn-color4{
+  background:#fb0;
+}
+.demo-area-09-btn-group.btn-menu-group .btn-color4:active{
+  background:#ff8;
+}
+
+.demo-area-09-input{
+  margin:25px auto;
+  -webkit-appearance: none;
+  border-radius:2px;
+  width:calc(100% - 8px);
+  height:20px;
+  background:none;
+  background-image:-webkit-linear-gradient(left ,#246 0%,#246 50%,#222 50%, #222 100%);
+  outline : none;
+  transition:.1s;
+  cursor:pointer;
+}
+.demo-area-09-input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width:32px;
+  height:50px;
+  background:#555;
+  border-radius:5px;
+  transition:.1s;
+}
+
+.demo-area-09-input::-webkit-slider-thumb:hover,
+.demo-area-09-input::-webkit-slider-thumb:active{
+  background:#777;
+}
+</style>
+</head>
+
+<body>
+  <div>
+    <div id="demo-area-09" class="da">
+      <div id="demo-area-09-content">
+        <div id="demo-area-09-controller">
+          <div class="demo-area-09-btn btn-power">全開</div>
+          <div class="demo-area-09-btn btn-show">🔄捲門狀態</div>
+          <div class="demo-area-09-btn-group btn-number-group">
+            <div class="demo-area-09-btn btn-num1">壹</div>
+            <div class="demo-area-09-btn btn-num2">貳</div>
+            <div class="demo-area-09-btn btn-num3">叁</div>
+            <div class="demo-area-09-btn btn-num4">肆</div>
+            <div class="demo-area-09-btn btn-num5">伍</div>
+            <div class="demo-area-09-btn btn-num6">陸</div>
+            <div class="demo-area-09-btn btn-num7">柒</div>
+            <div class="demo-area-09-btn btn-num8">捌</div>
+            <div class="demo-area-09-btn btn-num9">玖</div>
+            <div class="demo-area-09-btn btn-num11">井</div>
+            <div class="demo-area-09-btn btn-num0">洞</div>
+            <div class="demo-area-09-btn btn-num12">米</div>
+          </div>
+          <input type="range" min="0" max="180" step="5" value="90" class="demo-area-09-input">
+          <div class="demo-area-09-btn-group btn-direction-group">
+            <div class="demo-area-09-btn btn-up">🖕</div>
+            <br>
+            <div class="demo-area-09-btn btn-left">👈</div>
+            <div class="demo-area-09-btn btn-center">🤚</div>
+            <div class="demo-area-09-btn btn-right">👉</div>
+            <br>
+            <div class="demo-area-09-btn btn-down">👇</div>
+          </div>
+          <div class="demo-area-09-btn-group btn-player-group">
+            <div class="demo-area-09-btn btn-pre">⛔</div>
+            <div class="demo-area-09-btn btn-stop">⛔</div>
+            <div class="demo-area-09-btn btn-play">⛔</div>
+            <div class="demo-area-09-btn btn-pause">⛔</div>
+            <div class="demo-area-09-btn btn-next">⛔</div>
+          </div>
+          <div class="demo-area-09-btn-group btn-menu-group">
+            <div class="demo-area-09-btn btn-color1"></div>
+            <div class="demo-area-09-btn btn-color2"></div>
+            <div class="demo-area-09-btn btn-color3"></div>
+            <div class="demo-area-09-btn btn-color4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script id="jsbin-javascript">
+'use strict';
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } step("next"); }); }; }
+
+_asyncToGenerator(regeneratorRuntime.mark(function _callee16() {
+  var linebot, relay1, relay2, relay3, relay4, getElement, controllerBtnEvent, firebase1ca6d, flag1ca6d;
+  return regeneratorRuntime.wrap(function _callee16$(_context16) {
+    while (1) {
+      switch (_context16.prev = _context16.next) {
+        case 0:
+          controllerBtnEvent = function controllerBtnEvent(c, e, callback) {
+            if (e !== 'click') {
+              var _u = navigator.userAgent;
+              if (_u.indexOf('Android') > -1 || _u.indexOf('iPhone') > -1 || _u.indexOf('iPad') > -1) {
+                c.addEventListener(e[1], _asyncToGenerator(regeneratorRuntime.mark(function _callee() {
+                  return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                      switch (_context.prev = _context.next) {
+                        case 0:
+                          callback();
+
+                        case 1:
+                        case 'end':
+                          return _context.stop();
+                      }
+                    }
+                  }, _callee, this);
+                })));
+              } else {
+                c.addEventListener(e[0], _asyncToGenerator(regeneratorRuntime.mark(function _callee2() {
+                  return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                    while (1) {
+                      switch (_context2.prev = _context2.next) {
+                        case 0:
+                          callback();
+
+                        case 1:
+                        case 'end':
+                          return _context2.stop();
+                      }
+                    }
+                  }, _callee2, this);
+                })));
+              }
+            } else {
+              c.addEventListener('click', _asyncToGenerator(regeneratorRuntime.mark(function _callee3() {
+                return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                  while (1) {
+                    switch (_context3.prev = _context3.next) {
+                      case 0:
+                        callback();
+
+                      case 1:
+                      case 'end':
+                        return _context3.stop();
+                    }
+                  }
+                }, _callee3, this);
+              })));
+            }
+          };
+
+          getElement = function getElement(dom) {
+            var element = document.querySelector(dom);
+            return element;
+          };
+
+          boardReady({ device: 'Galq' }, (function () {
+            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee9(board) {
+              return regeneratorRuntime.wrap(function _callee9$(_context9) {
+                while (1) {
+                  switch (_context9.prev = _context9.next) {
+                    case 0:
+                      board.samplingInterval = 250;
+                      relay1 = getRelay(board, 3);
+                      relay2 = getRelay(board, 5);
+                      relay3 = getRelay(board, 6);
+                      relay4 = getRelay(board, 9);
+                      relay1.off();
+                      relay2.off();
+                      relay3.off();
+                      relay4.off();
+                      controllerBtnEvent(getElement('#demo-area-09 .btn-up'), 'click', _asyncToGenerator(regeneratorRuntime.mark(function _callee4() {
+                        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+                          while (1) {
+                            switch (_context4.prev = _context4.next) {
+                              case 0:
+                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門開啟';
+                                document.querySelector('#demo-area-09 .btn-show').style.background = '#99ff99';
+                                relay1.on();
+                                _context4.next = 5;
+                                return delay(1);
+
+                              case 5:
+                                relay1.off();
+                                _context4.next = 8;
+                                return delay(45);
+
+                              case 8:
+                                relay2.on();
+                                _context4.next = 11;
+                                return delay(1);
+
+                              case 11:
+                                relay2.off();
+
+                              case 12:
+                              case 'end':
+                                return _context4.stop();
+                            }
+                          }
+                        }, _callee4, this);
+                      })));
+                      controllerBtnEvent(getElement('#demo-area-09 .btn-center'), 'click', _asyncToGenerator(regeneratorRuntime.mark(function _callee5() {
+                        return regeneratorRuntime.wrap(function _callee5$(_context5) {
+                          while (1) {
+                            switch (_context5.prev = _context5.next) {
+                              case 0:
+                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門暫停';
+                                document.querySelector('#demo-area-09 .btn-show').style.background = '#ffcccc';
+                                relay2.on();
+                                _context5.next = 5;
+                                return delay(1);
+
+                              case 5:
+                                relay2.off();
+
+                              case 6:
+                              case 'end':
+                                return _context5.stop();
+                            }
+                          }
+                        }, _callee5, this);
+                      })));
+                      controllerBtnEvent(getElement('#demo-area-09 .btn-down'), 'click', _asyncToGenerator(regeneratorRuntime.mark(function _callee6() {
+                        return regeneratorRuntime.wrap(function _callee6$(_context6) {
+                          while (1) {
+                            switch (_context6.prev = _context6.next) {
+                              case 0:
+                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門關閉';
+                                document.querySelector('#demo-area-09 .btn-show').style.background = '#99ff99';
+                                relay3.on();
+                                _context6.next = 5;
+                                return delay(1);
+
+                              case 5:
+                                relay3.off();
+
+                              case 6:
+                              case 'end':
+                                return _context6.stop();
+                            }
+                          }
+                        }, _callee6, this);
+                      })));
+                      controllerBtnEvent(getElement('#demo-area-09 .btn-power'), 'click', _asyncToGenerator(regeneratorRuntime.mark(function _callee7() {
+                        return regeneratorRuntime.wrap(function _callee7$(_context7) {
+                          while (1) {
+                            switch (_context7.prev = _context7.next) {
+                              case 0:
+                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門全開';
+                                document.querySelector('#demo-area-09 .btn-show').style.background = '#ffff99';
+                                relay1.on();
+                                _context7.next = 5;
+                                return delay(1);
+
+                              case 5:
+                                relay1.off();
+
+                              case 6:
+                              case 'end':
+                                return _context7.stop();
+                            }
+                          }
+                        }, _callee7, this);
+                      })));
+                      board.on('error', (function () {
+                        var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee8(err) {
+                          return regeneratorRuntime.wrap(function _callee8$(_context8) {
+                            while (1) {
+                              switch (_context8.prev = _context8.next) {
+                                case 0:
+                                  board.error = err;
+                                  relay1.off();
+                                  relay2.off();
+                                  relay3.off();
+                                  relay4.off();
+
+                                case 5:
+                                case 'end':
+                                  return _context8.stop();
+                              }
+                            }
+                          }, _callee8, this);
+                        }));
+
+                        return function (_x2) {
+                          return ref.apply(this, arguments);
+                        };
+                      })());
+
+                    case 14:
+                    case 'end':
+                      return _context9.stop();
+                  }
+                }
+              }, _callee9, this);
+            }));
+
+            return function (_x) {
+              return ref.apply(this, arguments);
+            };
+          })());
+
+          flag1ca6d = true;
+
+          linebot = { token: 'NEmCi1Hu46L4csVPHdBEziBgbM31EitKDfp3XHXBX5Mt8jEpNgzQ8Z3t/1SWTIDjWquJltbym8r1Foktx4D2Ohuag6QDg4AvwFoV2Jrk3TQGYqLCCP8Q/Ho0Qy+DZWeCrBfVuhv++QJfe82PJJgvsQdB04t89/1O/w1cDnyilFU=', userId: 'Ue5ea4de81d404d24e1f3ff4d96dbe223', onVal: '' };
+          firebase1ca6d = new Firebase('https://webduino-linebot-1ca6d.firebaseio.com/');
+          firebase1ca6d.on('value', function (s) {
+            var msg1ca6d = false;
+            if (flag1ca6d) {
+              flag1ca6d = false;
+              return;
+            } else {
+              s.forEach(function (e) {
+                if (e.val().userid === linebot.userId && e.val().message !== '') {
+                  linebot.onVal = e.val().message;
+                  msg1ca6d = true;
+                }
+              });
+              if (!msg1ca6d) return;
+            }
+            if (linebot.onVal == '開') {
+              relay1.on();
+              setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee12() {
+                return regeneratorRuntime.wrap(function _callee12$(_context12) {
+                  while (1) {
+                    switch (_context12.prev = _context12.next) {
+                      case 0:
+                        relay1.off();
+                        setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee11() {
+                          return regeneratorRuntime.wrap(function _callee11$(_context11) {
+                            while (1) {
+                              switch (_context11.prev = _context11.next) {
+                                case 0:
+                                  relay2.on();
+                                  setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee10() {
+                                    return regeneratorRuntime.wrap(function _callee10$(_context10) {
+                                      while (1) {
+                                        switch (_context10.prev = _context10.next) {
+                                          case 0:
+                                            relay2.off();
+
+                                          case 1:
+                                          case 'end':
+                                            return _context10.stop();
+                                        }
+                                      }
+                                    }, _callee10, this);
+                                  })), 1000 * 1);
+
+                                case 2:
+                                case 'end':
+                                  return _context11.stop();
+                              }
+                            }
+                          }, _callee11, this);
+                        })), 1000 * 45);
+
+                      case 2:
+                      case 'end':
+                        return _context12.stop();
+                    }
+                  }
+                }, _callee12, this);
+              })), 1000 * 1);
+            }
+            if (linebot.onVal == '停') {
+              relay2.on();
+              setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee13() {
+                return regeneratorRuntime.wrap(function _callee13$(_context13) {
+                  while (1) {
+                    switch (_context13.prev = _context13.next) {
+                      case 0:
+                        relay2.off();
+
+                      case 1:
+                      case 'end':
+                        return _context13.stop();
+                    }
+                  }
+                }, _callee13, this);
+              })), 1000 * 1);
+            }
+            if (linebot.onVal == '關') {
+              relay3.on();
+              setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee14() {
+                return regeneratorRuntime.wrap(function _callee14$(_context14) {
+                  while (1) {
+                    switch (_context14.prev = _context14.next) {
+                      case 0:
+                        relay3.off();
+
+                      case 1:
+                      case 'end':
+                        return _context14.stop();
+                    }
+                  }
+                }, _callee14, this);
+              })), 1000 * 1);
+            }
+            if (linebot.onVal == '全開') {
+              relay1.on();
+              setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee15() {
+                return regeneratorRuntime.wrap(function _callee15$(_context15) {
+                  while (1) {
+                    switch (_context15.prev = _context15.next) {
+                      case 0:
+                        relay1.off();
+
+                      case 1:
+                      case 'end':
+                        return _context15.stop();
+                    }
+                  }
+                }, _callee15, this);
+              })), 1000 * 1);
+            }
+          });
+
+        case 7:
+        case 'end':
+          return _context16.stop();
+      }
+    }
+  }, _callee16, this);
+}))();
+</script>
+</body>
