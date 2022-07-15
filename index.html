@@ -3,7 +3,7 @@
 Created using JS Bin
 http://bin.webduino.io
 
-Copyright (c) 2022 by anonymous (http://bin.webduino.io/xofev/1/edit)
+Copyright (c) 2022 by anonymous (http://bin.webduino.io/gosej/1/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
@@ -13,7 +13,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>🈲️茄苳腳暗部_根🈲️</title>
+  <title>Webduino Blockly Demo 09</title>
   <script src="https://blocklypro.webduino.io/node_modules/jquery/dist/jquery.min.js?rev=2f6b11a7e914718e0290410e85366fe9"></script>
   <script src="https://blocklypro.webduino.io/dist/lib/webduino-all-0.4.20.min.js?rev=4426739c00d85325cb2d3d701fa50666"></script>
   <script src="https://blocklypro.webduino.io/dist/webduino-blockly.min.js?rev=6e074ceb23d12d1f7cf2ec95cd5a4150"></script>
@@ -231,38 +231,38 @@ html,body{
     <div id="demo-area-09" class="da">
       <div id="demo-area-09-content">
         <div id="demo-area-09-controller">
-          <div class="demo-area-09-btn btn-power">全開</div>
-          <div class="demo-area-09-btn btn-show">🔄捲門狀態</div>
+          <div class="demo-area-09-btn btn-power">○</div>
+          <div class="demo-area-09-btn btn-show">顯示</div>
           <div class="demo-area-09-btn-group btn-number-group">
-            <div class="demo-area-09-btn btn-num1">壹</div>
-            <div class="demo-area-09-btn btn-num2">貳</div>
-            <div class="demo-area-09-btn btn-num3">叁</div>
-            <div class="demo-area-09-btn btn-num4">肆</div>
-            <div class="demo-area-09-btn btn-num5">伍</div>
-            <div class="demo-area-09-btn btn-num6">陸</div>
-            <div class="demo-area-09-btn btn-num7">柒</div>
-            <div class="demo-area-09-btn btn-num8">捌</div>
-            <div class="demo-area-09-btn btn-num9">玖</div>
-            <div class="demo-area-09-btn btn-num11">井</div>
-            <div class="demo-area-09-btn btn-num0">洞</div>
-            <div class="demo-area-09-btn btn-num12">米</div>
+            <div class="demo-area-09-btn btn-num1">1</div>
+            <div class="demo-area-09-btn btn-num2">2</div>
+            <div class="demo-area-09-btn btn-num3">3</div>
+            <div class="demo-area-09-btn btn-num4">4</div>
+            <div class="demo-area-09-btn btn-num5">5</div>
+            <div class="demo-area-09-btn btn-num6">6</div>
+            <div class="demo-area-09-btn btn-num7">7</div>
+            <div class="demo-area-09-btn btn-num8">8</div>
+            <div class="demo-area-09-btn btn-num9">9</div>
+            <div class="demo-area-09-btn btn-num11">#</div>
+            <div class="demo-area-09-btn btn-num0">0</div>
+            <div class="demo-area-09-btn btn-num12">*</div>
           </div>
           <input type="range" min="0" max="180" step="5" value="90" class="demo-area-09-input">
           <div class="demo-area-09-btn-group btn-direction-group">
-            <div class="demo-area-09-btn btn-up">🖕</div>
+            <div class="demo-area-09-btn btn-up">▲</div>
             <br>
-            <div class="demo-area-09-btn btn-left">👈</div>
-            <div class="demo-area-09-btn btn-center">🤚</div>
-            <div class="demo-area-09-btn btn-right">👉</div>
+            <div class="demo-area-09-btn btn-left">◀</div>
+            <div class="demo-area-09-btn btn-center">●</div>
+            <div class="demo-area-09-btn btn-right">▶</div>
             <br>
-            <div class="demo-area-09-btn btn-down">👇</div>
+            <div class="demo-area-09-btn btn-down">▼</div>
           </div>
           <div class="demo-area-09-btn-group btn-player-group">
-            <div class="demo-area-09-btn btn-pre">⛔</div>
-            <div class="demo-area-09-btn btn-stop">⛔</div>
-            <div class="demo-area-09-btn btn-play">⛔</div>
-            <div class="demo-area-09-btn btn-pause">⛔</div>
-            <div class="demo-area-09-btn btn-next">⛔</div>
+            <div class="demo-area-09-btn btn-pre">◀◀</div>
+            <div class="demo-area-09-btn btn-stop">■</div>
+            <div class="demo-area-09-btn btn-play">▶</div>
+            <div class="demo-area-09-btn btn-pause">❙ ❙</div>
+            <div class="demo-area-09-btn btn-next">▶▶</div>
           </div>
           <div class="demo-area-09-btn-group btn-menu-group">
             <div class="demo-area-09-btn btn-color1"></div>
@@ -280,7 +280,7 @@ html,body{
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } step("next"); }); }; }
 
 _asyncToGenerator(regeneratorRuntime.mark(function _callee16() {
-  var linebot, relay1, relay2, relay3, relay4, getElement, controllerBtnEvent, firebase1ca6d, flag1ca6d;
+  var relay1, relay2, relay3, relay4, linebot, getElement, controllerBtnEvent;
   return regeneratorRuntime.wrap(function _callee16$(_context16) {
     while (1) {
       switch (_context16.prev = _context16.next) {
@@ -343,10 +343,11 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee16() {
           };
 
           boardReady({ device: 'Galq' }, (function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee9(board) {
-              return regeneratorRuntime.wrap(function _callee9$(_context9) {
+            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee15(board) {
+              var firebase1ca6d, flag1ca6d;
+              return regeneratorRuntime.wrap(function _callee15$(_context15) {
                 while (1) {
-                  switch (_context9.prev = _context9.next) {
+                  switch (_context15.prev = _context15.next) {
                     case 0:
                       board.samplingInterval = 250;
                       relay1 = getRelay(board, 3);
@@ -362,24 +363,24 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee16() {
                           while (1) {
                             switch (_context4.prev = _context4.next) {
                               case 0:
-                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門開啟';
-                                document.querySelector('#demo-area-09 .btn-show').style.background = '#99ff99';
+                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門開啟中';
                                 relay1.on();
-                                _context4.next = 5;
+                                _context4.next = 4;
                                 return delay(1);
 
-                              case 5:
+                              case 4:
                                 relay1.off();
-                                _context4.next = 8;
+                                _context4.next = 7;
                                 return delay(45);
 
-                              case 8:
+                              case 7:
                                 relay2.on();
-                                _context4.next = 11;
+                                _context4.next = 10;
                                 return delay(1);
 
-                              case 11:
+                              case 10:
                                 relay2.off();
+                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門開啟';
 
                               case 12:
                               case 'end':
@@ -393,14 +394,14 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee16() {
                           while (1) {
                             switch (_context5.prev = _context5.next) {
                               case 0:
-                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門暫停';
-                                document.querySelector('#demo-area-09 .btn-show').style.background = '#ffcccc';
+                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門停止中';
                                 relay2.on();
-                                _context5.next = 5;
+                                _context5.next = 4;
                                 return delay(1);
 
-                              case 5:
+                              case 4:
                                 relay2.off();
+                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門停止';
 
                               case 6:
                               case 'end':
@@ -414,14 +415,14 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee16() {
                           while (1) {
                             switch (_context6.prev = _context6.next) {
                               case 0:
-                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門關閉';
-                                document.querySelector('#demo-area-09 .btn-show').style.background = '#99ff99';
+                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門關閉中';
                                 relay3.on();
-                                _context6.next = 5;
+                                _context6.next = 4;
                                 return delay(1);
 
-                              case 5:
+                              case 4:
                                 relay3.off();
+                                document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門關閉';
 
                               case 6:
                               case 'end':
@@ -436,52 +437,166 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee16() {
                             switch (_context7.prev = _context7.next) {
                               case 0:
                                 document.querySelector("#demo-area-09 .btn-show").innerHTML = '捲門全開';
-                                document.querySelector('#demo-area-09 .btn-show').style.background = '#ffff99';
                                 relay1.on();
-                                _context7.next = 5;
+                                _context7.next = 4;
                                 return delay(1);
 
-                              case 5:
+                              case 4:
                                 relay1.off();
 
-                              case 6:
+                              case 5:
                               case 'end':
                                 return _context7.stop();
                             }
                           }
                         }, _callee7, this);
                       })));
-                      board.on('error', (function () {
-                        var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee8(err) {
-                          return regeneratorRuntime.wrap(function _callee8$(_context8) {
-                            while (1) {
-                              switch (_context8.prev = _context8.next) {
-                                case 0:
-                                  board.error = err;
-                                  relay1.off();
-                                  relay2.off();
-                                  relay3.off();
-                                  relay4.off();
+                      flag1ca6d = true;
 
-                                case 5:
-                                case 'end':
-                                  return _context8.stop();
-                              }
+                      linebot = { token: 'NEmCi1Hu46L4csVPHdBEziBgbM31EitKDfp3XHXBX5Mt8jEpNgzQ8Z3t/1SWTIDjWquJltbym8r1Foktx4D2Ohuag6QDg4AvwFoV2Jrk3TQGYqLCCP8Q/Ho0Qy+DZWeCrBfVuhv++QJfe82PJJgvsQdB04t89/1O/w1cDnyilFU=', userId: 'Ue5ea4de81d404d24e1f3ff4d96dbe223', onVal: '' };
+                      firebase1ca6d = new Firebase('https://webduino-linebot-1ca6d.firebaseio.com/');
+                      firebase1ca6d.on('value', function (s) {
+                        var msg1ca6d = false;
+                        if (flag1ca6d) {
+                          flag1ca6d = false;
+                          return;
+                        } else {
+                          s.forEach(function (e) {
+                            if (e.val().userid === linebot.userId && e.val().message !== '') {
+                              linebot.onVal = e.val().message;
+                              msg1ca6d = true;
                             }
-                          }, _callee8, this);
-                        }));
+                          });
+                          if (!msg1ca6d) return;
+                        }
+                        if (linebot.onVal.indexOf('開') != -1) {
+                          relay1.on();
+                          setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee10() {
+                            return regeneratorRuntime.wrap(function _callee10$(_context10) {
+                              while (1) {
+                                switch (_context10.prev = _context10.next) {
+                                  case 0:
+                                    relay1.off();
+                                    setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee9() {
+                                      return regeneratorRuntime.wrap(function _callee9$(_context9) {
+                                        while (1) {
+                                          switch (_context9.prev = _context9.next) {
+                                            case 0:
+                                              relay2.on();
+                                              setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee8() {
+                                                return regeneratorRuntime.wrap(function _callee8$(_context8) {
+                                                  while (1) {
+                                                    switch (_context8.prev = _context8.next) {
+                                                      case 0:
+                                                        relay2.off();
 
-                        return function (_x2) {
-                          return ref.apply(this, arguments);
-                        };
-                      })());
+                                                      case 1:
+                                                      case 'end':
+                                                        return _context8.stop();
+                                                    }
+                                                  }
+                                                }, _callee8, this);
+                                              })), 1000 * 1);
 
-                    case 14:
+                                            case 2:
+                                            case 'end':
+                                              return _context9.stop();
+                                          }
+                                        }
+                                      }, _callee9, this);
+                                    })), 1000 * 45);
+
+                                  case 2:
+                                  case 'end':
+                                    return _context10.stop();
+                                }
+                              }
+                            }, _callee10, this);
+                          })), 1000 * 1);
+                        }
+                        if (linebot.onVal == '停') {
+                          relay2.on();
+                          setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee11() {
+                            return regeneratorRuntime.wrap(function _callee11$(_context11) {
+                              while (1) {
+                                switch (_context11.prev = _context11.next) {
+                                  case 0:
+                                    relay2.off();
+
+                                  case 1:
+                                  case 'end':
+                                    return _context11.stop();
+                                }
+                              }
+                            }, _callee11, this);
+                          })), 1000 * 1);
+                        }
+                        if (linebot.onVal == '關') {
+                          relay3.on();
+                          setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee12() {
+                            return regeneratorRuntime.wrap(function _callee12$(_context12) {
+                              while (1) {
+                                switch (_context12.prev = _context12.next) {
+                                  case 0:
+                                    relay3.off();
+
+                                  case 1:
+                                  case 'end':
+                                    return _context12.stop();
+                                }
+                              }
+                            }, _callee12, this);
+                          })), 1000 * 1);
+                        }
+                        if (linebot.onVal == '全開') {
+                          relay1.on();
+                          setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee13() {
+                            return regeneratorRuntime.wrap(function _callee13$(_context13) {
+                              while (1) {
+                                switch (_context13.prev = _context13.next) {
+                                  case 0:
+                                    relay1.off();
+
+                                  case 1:
+                                  case 'end':
+                                    return _context13.stop();
+                                }
+                              }
+                            }, _callee13, this);
+                          })), 1000 * 1);
+                        }
+                        board.on('error', (function () {
+                          var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee14(err) {
+                            return regeneratorRuntime.wrap(function _callee14$(_context14) {
+                              while (1) {
+                                switch (_context14.prev = _context14.next) {
+                                  case 0:
+                                    board.error = err;
+                                    relay1.off();
+                                    relay2.off();
+                                    relay3.off();
+                                    relay4.off();
+
+                                  case 5:
+                                  case 'end':
+                                    return _context14.stop();
+                                }
+                              }
+                            }, _callee14, this);
+                          }));
+
+                          return function (_x2) {
+                            return ref.apply(this, arguments);
+                          };
+                        })());
+                      });
+
+                    case 17:
                     case 'end':
-                      return _context9.stop();
+                      return _context15.stop();
                   }
                 }
-              }, _callee9, this);
+              }, _callee15, this);
             }));
 
             return function (_x) {
@@ -489,123 +604,7 @@ _asyncToGenerator(regeneratorRuntime.mark(function _callee16() {
             };
           })());
 
-          flag1ca6d = true;
-
-          linebot = { token: 'NEmCi1Hu46L4csVPHdBEziBgbM31EitKDfp3XHXBX5Mt8jEpNgzQ8Z3t/1SWTIDjWquJltbym8r1Foktx4D2Ohuag6QDg4AvwFoV2Jrk3TQGYqLCCP8Q/Ho0Qy+DZWeCrBfVuhv++QJfe82PJJgvsQdB04t89/1O/w1cDnyilFU=', userId: 'Ue5ea4de81d404d24e1f3ff4d96dbe223', onVal: '' };
-          firebase1ca6d = new Firebase('https://webduino-linebot-1ca6d.firebaseio.com/');
-          firebase1ca6d.on('value', function (s) {
-            var msg1ca6d = false;
-            if (flag1ca6d) {
-              flag1ca6d = false;
-              return;
-            } else {
-              s.forEach(function (e) {
-                if (e.val().userid === linebot.userId && e.val().message !== '') {
-                  linebot.onVal = e.val().message;
-                  msg1ca6d = true;
-                }
-              });
-              if (!msg1ca6d) return;
-            }
-            if (linebot.onVal == '開') {
-              relay1.on();
-              setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee12() {
-                return regeneratorRuntime.wrap(function _callee12$(_context12) {
-                  while (1) {
-                    switch (_context12.prev = _context12.next) {
-                      case 0:
-                        relay1.off();
-                        setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee11() {
-                          return regeneratorRuntime.wrap(function _callee11$(_context11) {
-                            while (1) {
-                              switch (_context11.prev = _context11.next) {
-                                case 0:
-                                  relay2.on();
-                                  setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee10() {
-                                    return regeneratorRuntime.wrap(function _callee10$(_context10) {
-                                      while (1) {
-                                        switch (_context10.prev = _context10.next) {
-                                          case 0:
-                                            relay2.off();
-
-                                          case 1:
-                                          case 'end':
-                                            return _context10.stop();
-                                        }
-                                      }
-                                    }, _callee10, this);
-                                  })), 1000 * 1);
-
-                                case 2:
-                                case 'end':
-                                  return _context11.stop();
-                              }
-                            }
-                          }, _callee11, this);
-                        })), 1000 * 45);
-
-                      case 2:
-                      case 'end':
-                        return _context12.stop();
-                    }
-                  }
-                }, _callee12, this);
-              })), 1000 * 1);
-            }
-            if (linebot.onVal == '停') {
-              relay2.on();
-              setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee13() {
-                return regeneratorRuntime.wrap(function _callee13$(_context13) {
-                  while (1) {
-                    switch (_context13.prev = _context13.next) {
-                      case 0:
-                        relay2.off();
-
-                      case 1:
-                      case 'end':
-                        return _context13.stop();
-                    }
-                  }
-                }, _callee13, this);
-              })), 1000 * 1);
-            }
-            if (linebot.onVal == '關') {
-              relay3.on();
-              setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee14() {
-                return regeneratorRuntime.wrap(function _callee14$(_context14) {
-                  while (1) {
-                    switch (_context14.prev = _context14.next) {
-                      case 0:
-                        relay3.off();
-
-                      case 1:
-                      case 'end':
-                        return _context14.stop();
-                    }
-                  }
-                }, _callee14, this);
-              })), 1000 * 1);
-            }
-            if (linebot.onVal == '全開') {
-              relay1.on();
-              setTimeout(_asyncToGenerator(regeneratorRuntime.mark(function _callee15() {
-                return regeneratorRuntime.wrap(function _callee15$(_context15) {
-                  while (1) {
-                    switch (_context15.prev = _context15.next) {
-                      case 0:
-                        relay1.off();
-
-                      case 1:
-                      case 'end':
-                        return _context15.stop();
-                    }
-                  }
-                }, _callee15, this);
-              })), 1000 * 1);
-            }
-          });
-
-        case 7:
+        case 3:
         case 'end':
           return _context16.stop();
       }
